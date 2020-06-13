@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
+  icon = '../../assets/icon/buy.svg';
   constructor() { }
 
   ngOnInit() {
+  }
+
+  /**
+   * 
+   */
+  segmentChanged($event: CustomEvent) {
+    console.log($event.detail.value);
+    this.icon = `../../assets/icon/${$event.detail.value}.svg`;
   }
 
 }
