@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { StockPageRoutingModule } from './stock-routing.module';
 
 import { StockPage } from './stock.page';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    StockPageRoutingModule
+    StockPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [StockPage]
 })

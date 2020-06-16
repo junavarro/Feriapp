@@ -1,0 +1,10 @@
+div{
+    &.noProducts{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        div{
+            align-self: center;
+        }
+    }
+}

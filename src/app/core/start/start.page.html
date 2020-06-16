@@ -1,0 +1,34 @@
+<ion-header>
+  <!-- <ion-toolbar>
+    <ion-title>start</ion-title>
+  </ion-toolbar> -->
+</ion-header>
+
+<ion-content>
+  <div class="container">
+
+    <ion-grid >
+      <ion-row class="ion-margin">
+        <ion-col>
+          <div class="circle shadow">
+            <img [src]="icon" width="65px" height="65px" />
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-segment mode="ios" (ionChange)="segmentChanged($event)" value="buy">
+            <ion-segment-button value="sell">
+              <ion-label>Vender</ion-label>
+            </ion-segment-button>
+            <ion-segment-button active value="buy">
+              <ion-label>Comprar</ion-label>
+            </ion-segment-button>
+          </ion-segment>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </div>
+
+</ion-content>

@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'policy',
     loadChildren: () => import('./policy/policy.module').then( m => m.PolicyPageModule)
   },
+  {
+    path: 'start',
+    loadChildren: () => import('./start/start.module').then( m => m.StartPageModule)
+  },
 ];
 
 @NgModule({

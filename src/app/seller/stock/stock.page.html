@@ -1,9 +1,26 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>stock</ion-title>
+  <ion-toolbar class="ion-text-center">
+    <ion-title> Mis productos</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
+  <div class="noProducts">
+    <div>
+      <p> No has agregado ningún producto</p>
+    </div>
+    <div>
+      <ion-fab-button>
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </div>
+    <div>
+      <p> Agregá tu primer producto</p>
+    </div>
+  </div>
+
+  <app-product-list>
+
+  </app-product-list>
 </ion-content>

@@ -5,30 +5,37 @@
 </ion-header>
 
 <ion-content>
-  <div class="container">
-
-    <ion-grid >
-      <ion-row class="ion-margin">
-        <ion-col>
-          <div class="circle shadow">
-            <img [src]="icon" width="65px" height="65px" />
-          </div>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <ion-segment mode="ios" (ionChange)="segmentChanged($event)" value="buy">
-            <ion-segment-button value="sell">
-              <ion-label>Vender</ion-label>
-            </ion-segment-button>
-            <ion-segment-button active value="buy">
-              <ion-label>Comprar</ion-label>
-            </ion-segment-button>
-          </ion-segment>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-
-  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <form [formGroup]="loginForm">
+            <ion-item>
+              <ion-label for="phone">
+                Teléfono
+              </ion-label>
+              <ion-input id="phone" type="phone" formControlName="phone"></ion-input> 
+            </ion-item>
+            
+            <ion-item>
+              <ion-label for="password">
+                Contraseña
+              </ion-label>
+              <ion-input  id="password" type="password" formControlName="password"></ion-input>
+              
+            </ion-item>
+            <div class=submit>
+              <ion-button type="submit">Iniciar sesión</ion-button>
+            </div>
+          </form>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-justify-content-center">
+        <ion-button size="small" color="tertiary"> Olvidé mi contraseña</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>

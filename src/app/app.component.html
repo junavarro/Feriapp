@@ -1,3 +1,22 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-content>
+    <ion-router-outlet></ion-router-outlet>
+  </ion-content>
+  <ion-footer *ngIf="showTabs" class="ion-no-border">
+    <ion-toolbar>
+      <ion-toolbar>
+        <ion-segment>
+          <ion-segment-button >
+            <ion-icon src="../assets/icon/search.svg"></ion-icon>
+          </ion-segment-button>
+          <ion-segment-button routerLink="/stock" >
+            <ion-icon  src="../assets/icon/bitacora.svg"></ion-icon>
+          </ion-segment-button>
+          <ion-segment-button >
+            <ion-icon src="../assets/icon/user.svg"></ion-icon>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-toolbar>
+    </ion-toolbar>
+  </ion-footer>
 </ion-app>
