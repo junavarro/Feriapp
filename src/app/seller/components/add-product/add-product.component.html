@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center"> Agregar productos </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cancel($event)">
+        <ion-icon color="medium" name="close-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form [formGroup]="addProductForm" (submit)="newProductCallBack($event)">
+    <ion-item color="light">
+      <ion-label for="productType">
+        Tipo de producto
+      </ion-label>
+      <ion-select (ionChange)="inputChanged('productType')" id="productType" formControlName="productType" placeholder="Producto">
+        <ion-select-option value="1">Pes 1</ion-select-option>
+        <ion-select-option value="2">Pes 2</ion-select-option>
+        <ion-select-option value="3">Pes 3</ion-select-option>
+        <ion-select-option value="4">Pes 4</ion-select-option>
+        <ion-select-option value="5">Pes 5</ion-select-option>
+        <ion-select-option value="6">Pes 6</ion-select-option>
+        <ion-select-option value="7">Pes 7</ion-select-option>
+        <ion-select-option value="8">Pes 8</ion-select-option>
+        <ion-select-option value="9">Pes 9</ion-select-option>
+        <ion-select-option value="10">Pes 10</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item color="light">
+      <ion-label for="productQuantity">
+        Cantidad
+      </ion-label>
+      <ion-input (ionChange)="inputChanged('productQuantity')" type="number" id="productQuantity" formControlName="productQuantity" placeholder="00.00">
+      </ion-input>
+      <span> kg</span>
+    </ion-item>
+    <ion-item color="light">
+      <ion-label for="productExtractionDate">
+        Fecha de pesca
+      </ion-label>
+      <ion-input (ionChange)="inputChanged('productExtractionDate')" type="date" id="productExtractionDate" formControlName="productExtractionDate"
+        placeholder="dd/mm/aaaa">
+      </ion-input>
+    </ion-item>
+    <ion-item color="light">
+      <ion-label for="productFishingZone">
+        Zona de pesca
+      </ion-label>
+      <ion-select (ionChange)="inputChanged('productFishingZone')"  id="productFishingZone" formControlName="productFishingZone" placeholder="Zona">
+        <ion-select-option value="1">Zona 1</ion-select-option>
+        <ion-select-option value="2">Zona 2</ion-select-option>
+        <ion-select-option value="3">Zona 3</ion-select-option>
+        <ion-select-option value="4">Zona 4</ion-select-option>
+        <ion-select-option value="5">Zona 5</ion-select-option>
+        <ion-select-option value="6">Zona 6</ion-select-option>
+        <ion-select-option value="7">Zona 7</ion-select-option>
+        <ion-select-option value="8">Zona 8</ion-select-option>
+        <ion-select-option value="9">Zona 9</ion-select-option>
+        <ion-select-option value="10">Zona 10</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item color="light">
+      <ion-input (ionChange)="inputChanged('currentLocation')"  type="text" id="currentLocation" formControlName="currentLocation"
+        placeholder="Ubicación del producto">
+      </ion-input>
+    </ion-item>
+    <div class="submitBtn">
+      <ion-button [disabled]="!canSubmit" color="medium" shape="round" expand="block" type="submit">Añadir</ion-button>
+    </div>
+  </form>
+  {{addProductForm.getRawValue()|json}}
+</ion-content>
