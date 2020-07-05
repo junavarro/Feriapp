@@ -1,6 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 import { FormBuilder, Validators, FormControl, FormGroup } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
+export interface AddProductFormResult {
+  currentLocation: string;
+  productExtractionDate: string;
+  productFishingZone: string;
+  productQuantity: number;
+  productType: string;
+  role: string;
+}
 
 @Component({
   selector: 'app-add-product',
@@ -8,6 +16,13 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./add-product.component.scss'],
 })
 export class AddProductComponent implements OnInit {
+
+  /**
+   * Call passed by parameter.
+   */
+  @Output() answer = new EventEmitter<AddProductFormResult>();
+
+  
 
   addProductForm: FormGroup;
   canSubmit: boolean;
@@ -37,7 +52,7 @@ export class AddProductComponent implements OnInit {
     const keys = Object.keys(this.addProductForm.controls);
     for (const controlKey of keys) {
       if (this.addProductForm.get(controlKey).errors) {
-        console.log(controlKey, this.addProductForm.get(controlKey).errors);
+        // console.log(controlKey, this.addProductForm.get(controlKey).errors);
         canSubmit = false;
         break;
       }
@@ -45,13 +60,14 @@ export class AddProductComponent implements OnInit {
     }
 
     this.canSubmit = canSubmit;
-    console.log(this.canSubmit);
+    // console.log(this.canSubmit);
   }
 
   newProductCallBack($event) {
     // console.log('New product', this.addProductForm.getRawValue());
     this.modalController.dismiss(this.addProductForm.getRawValue(), 'add');
-
+    const data = {...(this.addProductForm.getRawValue().data), role: 'add'};
+    this.answer.emit(data);
   }
 
 

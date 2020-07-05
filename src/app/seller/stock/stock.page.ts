@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { AddProductComponent } from '../components/add-product/add-product.component';
+import { AddProductComponent, AddProductFormResult } from '../components/add-product/add-product.component';
 
 @Component({
   selector: 'app-stock',
@@ -19,6 +19,13 @@ export class StockPage implements OnInit {
     const modal = await this.modalController.create({
       component: AddProductComponent,
       cssClass: 'my-custom-class',
+      componentProps: {
+        // answer: (newProduct: AddProductFormResult) => {
+        //   if (newProduct.role === 'add') {
+        //     console.log(newProduct);
+        //   }
+        // }
+      }
     });
     modal.onDidDismiss().then((dismissed) => {
       console.log(dismissed);
@@ -26,6 +33,6 @@ export class StockPage implements OnInit {
     return await modal.present();
   }
 
-  
+
 
 }
