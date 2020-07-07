@@ -5,37 +5,21 @@
 </ion-header>
 
 <ion-content>
-  <ion-grid>
+  <ion-grid class="login-page-grid ion-no-padding">
     <ion-row>
-      <ion-col>
-        <ion-card>
-          <form [formGroup]="loginForm">
-            <ion-item>
-              <ion-label for="phone">
-                Teléfono
-              </ion-label>
-              <ion-input id="phone" type="phone" formControlName="phone"></ion-input> 
-            </ion-item>
-            
-            <ion-item>
-              <ion-label for="password">
-                Contraseña
-              </ion-label>
-              <ion-input  id="password" type="password" formControlName="password"></ion-input>
-              
-            </ion-item>
-            <div class=submit>
-              <ion-button type="submit">Iniciar sesión</ion-button>
-            </div>
-          </form>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col class="ion-justify-content-center">
-        <ion-button size="small" color="tertiary"> Olvidé mi contraseña</ion-button>
+      <ion-col class="login-container ion-no-padding">
+        <b><ion-label class="login-container__welcome-title">¡Bienvenido!</ion-label></b>
+        <ion-label class="login-container__request-phone-label">Ingresa tu número de teléfono</ion-label>
+        <form class="login-form" [formGroup]="loginForm" (ngSubmit)="logUser()">
+          <b><ion-label class="login-form__phone-label" for="phone">NÚMERO DE TELÉFONO</ion-label></b>
+          <ion-item class="login-form__phone-item">
+            <ion-input class="login-form__phone-item_input" id="phone" type="phone" formControlName="phone" placeholder="88888888"></ion-input> 
+            <ion-icon class="login-form__phone-item_valid-icon" name="checkmark-circle-outline"></ion-icon>
+          </ion-item>
+          <ion-button class="login-form__submit-button" type="submit" [disabled]="!loginForm.valid" strong="true">Siguiente</ion-button>
+        </form>
+        <ion-button class="create-account-button" type="submit" strong="true">Crear Cuenta</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
-
 </ion-content>
