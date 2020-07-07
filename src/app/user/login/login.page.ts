@@ -1,24 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, Validators, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
+
 export class LoginPage implements OnInit {
-  loginForm;
+  private loginForm : FormGroup;
+
   constructor( private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      phone:  new FormControl('84921188', Validators.minLength(8)),
-      password: new FormControl('capricornio', Validators.minLength(8)), 
+      phone:  new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.minLength(8),
+        Validators.maxLength(8),
+        Validators.pattern(/^-?(0|[1-9]\d*)?$/)])),
     });
   }
 
-  onSubmit(loginData) {
-    this.loginForm.reset();
-    console.warn('Your login has been submitted', loginData);
+  logUser() {
+    console.log(this.loginForm.value);
   }
 
 }
