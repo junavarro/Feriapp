@@ -12,13 +12,13 @@
         <ion-label class="login-container__request-phone-label">Ingresa tu número de teléfono</ion-label>
         <form class="login-form" [formGroup]="loginForm" (ngSubmit)="logUser()">
           <b><ion-label class="login-form__phone-label" for="phone">NÚMERO DE TELÉFONO</ion-label></b>
-          <ion-item class="login-form__phone-item">
-            <ion-input class="login-form__phone-item_input" id="phone" type="phone" formControlName="phone" placeholder="88888888"></ion-input> 
+          <ion-item class="login-form__phone-item" lines="none">
+            <ion-input class="login-form__phone-item_input" id="phone" type="phone" formControlName="phone" placeholder="Número telefónico"></ion-input> 
             <ion-icon class="login-form__phone-item_valid-icon" name="checkmark-circle-outline"></ion-icon>
           </ion-item>
-          <ion-button class="login-form__submit-button" type="submit" [disabled]="!loginForm.valid" strong="true">Siguiente</ion-button>
+          <ion-button class="login-form__submit-button" type="submit" [disabled]="!loginForm.valid" strong="true" expand="block">Siguiente</ion-button>
         </form>
-        <ion-button class="create-account-button" type="submit" strong="true">Crear Cuenta</ion-button>
+        <ion-button class="create-account-button" type="submit" strong="true" fill="outline" expand="block">Crear Cuenta</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>

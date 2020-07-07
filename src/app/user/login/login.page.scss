@@ -5,7 +5,7 @@
 }
 
 .login-container {
-
+    width: 100%;
     padding: 0 24px 0 24px;
     background-color: white;
     border-radius: 24px 24px 0 0;
@@ -38,8 +38,9 @@
     }
 
     &__phone-item {
-
         --padding-start: 0;
+        --border-width: 0 0 2px 0;
+        --border-color: rgba(143,146,161,.2);
 
         &_input {
             font-size: 14px;
@@ -48,24 +49,26 @@
     
         &_valid-icon {
             font-size: 18px;
-            color: rgba(30, 31, 32, 0.72);
+            color: #C4C4C4;
         }
     }
 
     &__submit-button {
         margin: 23px 0 0 0;
         height: 48px;
-        width: 100%;
         font-size: 14px;
         --border-radius: 60px;
+        --color: white;
+        --background: #C4C4C4;
     }
 }
 
 .create-account-button {
     margin: 36px 0 0 0;
     height: 56px;
-    width: 100%;
     font-size: 14px;
+    --color: black;
     --border-radius: 60px;
-    color: black;
+    --border-color: #E0E0E0;
+    --border-width: 2px;
 }
