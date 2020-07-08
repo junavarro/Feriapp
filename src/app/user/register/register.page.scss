@@ -1,0 +1,43 @@
+.header-container {
+    margin: 44px 0 14px 0;
+    display: flex;
+
+    &__go-back-button {
+        margin: 0 0 0 21px;
+        font-size: 40px;
+        color: #BDBDBD;
+    }
+
+    &__title {
+        width: 170px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        align-self: center;
+        font-size: 22px;
+    }
+}
+
+.registration-form {
+    margin: 0 24px 0 24px;
+
+    &__item {
+        --padding-start: 0;
+        --border-width: 0 0 2px 0;
+        --border-color: rgba(143,146,161,.2);
+        margin-bottom: 10px;
+
+        &-label {
+            font-size: 12px;
+            line-height: 20px;
+            letter-spacing: 1px;
+            color: #1E1F20;
+        }
+    
+        &-input {
+            font-size: 14px;
+            line-height: 20px;
+            color: #8F92A1;
+        }
+    }
+}
