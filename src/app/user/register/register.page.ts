@@ -23,11 +23,49 @@ export class RegisterPage implements OnInit {
 
     if (this.userType=='seller') { 
       this.sellerRegistrationForm = this.formBuilder.group({
+        name: new FormControl('', Validators.compose([
+          Validators.required,
+          Validators.pattern("^[a-zA-Z ]*$")
+        ])),
+        cedula: new FormControl('', Validators.compose([
+          Validators.required,
+          Validators.minLength(9),
+          Validators.maxLength(9),
+        ])),
         phone:  new FormControl('', Validators.compose([
           Validators.required,
           Validators.minLength(8),
           Validators.maxLength(8),
-          Validators.pattern(/^-?(0|[1-9]\d*)?$/)])),
+        ])),
+        ubicacion: new FormControl('', Validators.compose([
+          Validators.required
+        ])),
+        contraseña: new FormControl('', Validators.compose([
+          Validators.required,
+          Validators.minLength(6)
+        ])),
+        repetirContraseña: new FormControl('', Validators.compose([
+          Validators.required,
+          Validators.minLength(6)
+        ])),
+        correo: new FormControl('', Validators.compose([
+          Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$")
+        ])),
+        whatsapp: new FormControl('', Validators.compose([
+          Validators.required,
+          Validators.minLength(8),
+          Validators.maxLength(8)
+        ])),
+        telegram: new FormControl('', Validators.compose([
+          Validators.required,
+          Validators.minLength(8),
+          Validators.maxLength(8)
+        ])),
+        sinpe: new FormControl('', Validators.compose([
+          Validators.required,
+          Validators.minLength(8),
+          Validators.maxLength(8)
+        ])),
       });
     }
 

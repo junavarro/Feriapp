@@ -19,7 +19,7 @@
 }
 
 .registration-form {
-    margin: 0 24px 0 24px;
+    margin: 39px 24px 0 24px;
 
     &__item {
         --padding-start: 0;
@@ -39,5 +39,30 @@
             line-height: 20px;
             color: #8F92A1;
         }
+
+        &-valid-icon {
+            font-size: 18px;
+            color: #C4C4C4;
+        }
+
+        &-invalid-icon {
+            color: #53D769;
+        }
+
+        &-reveal\&hide-password-icon {
+            font-size: 18px;
+            color: #8F92A1;
+        }
+
+    }
+
+    &__submit-button {
+        margin: 64px 0 23px 0;
+        height: 48px;
+        font-size: 14px;
+        line-height: 20px;
+        --border-radius: 60px;
+        --color: #474141;
+        --background: #EEEDED;
     }
 }
