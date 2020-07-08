@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modal',
@@ -7,6 +8,10 @@ import { Component } from '@angular/core';
 })
 export class ModalComponent {
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+  goToRegistrationPage(userType: string) {
+    this.router.navigate(['/register'], {queryParams: {user: userType}});
+  }
 
 }
