@@ -1,3 +1,22 @@
-<p>
-  modal works!
-</p>
+<ion-header>
+</ion-header>
+
+<ion-content>
+  <div class="modal-container">
+    <ion-icon name="chevron-back-circle" class="modal-container__go-back-button"></ion-icon>
+    <b><ion-label class="modal-container__title">¿Qué tipo de cuenta desea tener?</ion-label></b>
+  </div>
+  <div class="choose-user">
+    <form [formGroup]="chooseUserForm" (ngSubmit)="chooseUser()"> 
+      <ion-button class="choose-user__button" type="submit" strong="true" expand="block" (click) = "goToRegistrationPage('buyer')">Comprador</ion-button>
+      <b><ion-label class="choose-user__label">Comprador</ion-label></b>
+      <ion-button class="choose-user__button"  type="submit" strong="true" expand="block" (click) = "goToRegistrationPage('seller')">Vendedor</ion-button>
+      <b><ion-label class="choose-user__label">Vendedor</ion-label></b>
+      <ion-button class="choose-user__next-button" type="submit" strong="true" expand="block">Siguiente</ion-button>
+    </form>
+  </div>
+  <ion-content>
+
+
+
+

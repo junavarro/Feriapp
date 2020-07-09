@@ -1,13 +1,69 @@
-/* DOES NOT WORK - not specific enough */
-.modal-wrapper {
-    background: #222;
-  }
-  
-  /* Works - pass "my-custom-class" in cssClass to increase specificity */
-  .my-custom-class .modal-wrapper {
-    background: #222;
-  }
+.modal-container{
+    margin-top: 44px;
 
-  .my-custom-class {
-    --background: #222;
-  }
+    &__go-back-button{
+        font-size: 40px;
+        color: #BDBDBD;
+        margin-left: 21px;
+    }
+
+    &__title{
+        //font-family: SF UI Text;
+        font-size: 22px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        align-self: center;
+        width: 222px;
+        font-style: normal;
+        color: #2E3034;
+        text-align: center;
+    }
+}
+
+.choose-user{
+    margin-top: 70px;
+
+    &__label{
+        //font-family: SF UI Text;
+        font-style: normal;
+        font-size: 12px;
+        line-height: 20px;
+        color: #1E1F20;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        width: 303px;
+        height: 20px;
+        
+    }
+
+    &__button{
+        width: 102px;
+        height: 102px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 24px;
+        --background: #DCDCDC;
+        --border-radius: 50px;
+    }
+
+    &__next-button {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 89px;
+        height: 48px;
+        width: 327px;
+        font-size: 14px;
+        font-style: normal;
+        //font-family: SF UI Text;
+        font-weight: bold;
+        line-height: 20px;
+        color: #474141;
+        --border-radius: 60px;
+        --background: #EEEDED;
+    }
+}
+
