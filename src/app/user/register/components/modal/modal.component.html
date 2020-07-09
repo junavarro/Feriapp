@@ -7,16 +7,10 @@
     <b><ion-label class="modal-container__title">¿Qué tipo de cuenta desea tener?</ion-label></b>
   </div>
   <div class="choose-user">
-    <form [formGroup]="chooseUserForm" (ngSubmit)="chooseUser()"> 
-      <ion-button class="choose-user__button" type="submit" strong="true" expand="block" (click) = "goToRegistrationPage('buyer')">Comprador</ion-button>
-      <b><ion-label class="choose-user__label">Comprador</ion-label></b>
-      <ion-button class="choose-user__button"  type="submit" strong="true" expand="block" (click) = "goToRegistrationPage('seller')">Vendedor</ion-button>
-      <b><ion-label class="choose-user__label">Vendedor</ion-label></b>
-      <ion-button class="choose-user__next-button" type="submit" strong="true" expand="block">Siguiente</ion-button>
-    </form>
+    <ion-button class="choose-user__button-unselected" strong="true" expand="block" (click)="selectUserType('buyer')" [class.choose-user__button-selected]="isBuyerSelected">Comprador</ion-button>
+    <b><ion-label class="choose-user__label">Comprador</ion-label></b>
+    <ion-button class="choose-user__button-unselected" strong="true" expand="block" (click)="selectUserType('seller')" [class.choose-user__button-selected]="isSellerSelected">Vendedor</ion-button>
+    <b><ion-label class="choose-user__label">Vendedor</ion-label></b>
+    <ion-button class="choose-user__next-button" type="submit" strong="true" expand="block" [disabled]="!selectedUserType" (click)="goToRegistrationPage(selectedUserType)">Siguiente</ion-button>
   </div>
   <ion-content>
-
-
-
-
