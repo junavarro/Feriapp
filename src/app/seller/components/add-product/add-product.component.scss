@@ -19,58 +19,73 @@
     }
 }
 
-form {
-    div {
-        ion-button{
-            margin: 29px 22px 0 22px;
-        }
-    }
-}
-
 .add-product-form {
-    margin: 29px 0 70px 0;
+    margin-top: 30px;
 
     &__item {
         --padding-start: 0;
         --border-width: 0 0 2px 0;
         --border-color: rgba(143,146,161,.2);
-        margin-bottom: 10px;
+        --color: #9A999E;
+        --font-size: 12px;
+        --line-height: 14px;
 
         &-label {
-            font-size: 12px;
-            line-height: 20px;
-            letter-spacing: 1px;
-            color: #1E1F20;
+            margin-left: 33px;
+            width: 125px;
         }
-    
+
+        &-last {
+            --padding-bottom: 40px; 
+            --border-width: 0 0 4px 0;
+            --border-color: #F6F6F6;
+        }
+
+        &-icon {
+            font-size: 20px;
+            color:#9A999E;
+            margin-right: 25px;
+            background-color: #F6F6F6;
+            padding: 2px 3px 2px 0;
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
+
+        &-location-input {
+            margin-left: 33px;
+            background-color: #F6F6F6;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+            --padding-start: 5px !important;
+            --padding-top: 2px !important;
+            --padding-bottom: 2px !important;
+        }
+
+        &-dropdown {
+            padding-right: 10px;
+            padding-left: 10px;
+            margin-right: 25px;
+            background-color: #F6F6F6;
+            border-radius: 3px;
+            width: 115px;
+            text-align: center;
+        }
+
         &-input {
-            font-size: 14px;
-            line-height: 20px;
-            color: #8F92A1;
+            text-align: center;
+            margin: 0 8px 0 60px;
+            max-width: 115px;
+            border-radius: 3px;
+            background-color: #F6F6F6;
         }
-
-        &-valid-icon {
-            font-size: 18px;
-            color: #C4C4C4;
-        }
-
-        &-invalid-icon {
-            color: #53D769;
-        }
-
-        &-reveal\&hide-password-icon {
-            font-size: 18px;
-            color: #8F92A1;
-        }
-
+        
     }
 
     &__submit-button {
-        margin: 64px 0 23px 0;
+        margin: 29px 22px 0 22px;
         height: 48px;
         font-size: 14px;
         line-height: 20px;
-        --border-radius: 60px;
         --color: #474141;
         --background: #EEEDED;
     }
