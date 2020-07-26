@@ -1,19 +1,77 @@
-ion-item{
+.header-container {
+    margin-top: 44px;
 
-    margin-top: 20px;
-    margin-bottom: 15px;
+    &__toolbar {
+        height: 60px;
+        --border-color: #F6F6F6;
+        --border-width: 0 0 4px !important;
+    }
+
+    &__go-back-button {
+        margin: 0 0 0 21px;
+        font-size: 40px;
+        color: #BDBDBD;
+    }
+
+    &__title {
+        font-size: 22px;
+        line-height: 30px;
+    }
 }
 
-form{
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    div{
-        align-self: center;
-        width: 80%;
+form {
+    div {
         ion-button{
-            margin-top: 45%;
+            margin: 29px 22px 0 22px;
         }
+    }
+}
+
+.add-product-form {
+    margin: 29px 0 70px 0;
+
+    &__item {
+        --padding-start: 0;
+        --border-width: 0 0 2px 0;
+        --border-color: rgba(143,146,161,.2);
+        margin-bottom: 10px;
+
+        &-label {
+            font-size: 12px;
+            line-height: 20px;
+            letter-spacing: 1px;
+            color: #1E1F20;
+        }
+    
+        &-input {
+            font-size: 14px;
+            line-height: 20px;
+            color: #8F92A1;
+        }
+
+        &-valid-icon {
+            font-size: 18px;
+            color: #C4C4C4;
+        }
+
+        &-invalid-icon {
+            color: #53D769;
+        }
+
+        &-reveal\&hide-password-icon {
+            font-size: 18px;
+            color: #8F92A1;
+        }
+
+    }
+
+    &__submit-button {
+        margin: 64px 0 23px 0;
+        height: 48px;
+        font-size: 14px;
+        line-height: 20px;
+        --border-radius: 60px;
+        --color: #474141;
+        --background: #EEEDED;
     }
 }
