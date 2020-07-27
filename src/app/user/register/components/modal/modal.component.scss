@@ -22,7 +22,7 @@
 }
 
 .choose-user{
-    margin-top: 70px;
+    margin-top: 90px;
 
     &__label{
         //font-family: SF UI Text;
@@ -60,20 +60,17 @@
         --border-radius: 50px;
     }
 
-    &__next-button {
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 89px;
-        height: 48px;
-        width: 327px;
-        font-size: 14px;
-        font-style: normal;
-        //font-family: SF UI Text;
-        font-weight: bold;
-        line-height: 20px;
-        color: #474141;
-        --border-radius: 60px;
-        --background: #EEEDED;
-    }
 }
 
+.next-button {
+    margin-top: 89px;
+    height: 48px;
+    font-size: 14px;
+    font-style: normal;
+    //font-family: SF UI Text;
+    font-weight: bold;
+    line-height: 20px;
+    color: #474141;
+    --border-radius: 60px;
+    --background: #EEEDED;
+}
