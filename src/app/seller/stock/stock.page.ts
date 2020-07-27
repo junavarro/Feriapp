@@ -9,6 +9,7 @@ import { AddProductComponent, AddProductFormResult } from '../components/add-pro
 })
 export class StockPage implements OnInit {
 
+  products = [];
 
   constructor(private modalController: ModalController) { }
 
@@ -18,21 +19,15 @@ export class StockPage implements OnInit {
   async presentAddProductModal() {
     const modal = await this.modalController.create({
       component: AddProductComponent,
-      cssClass: 'my-custom-class',
-      componentProps: {
-        // answer: (newProduct: AddProductFormResult) => {
-        //   if (newProduct.role === 'add') {
-        //     console.log(newProduct);
-        //   }
-        // }
-      }
+      cssClass: 'my-custom-class'
     });
     modal.onDidDismiss().then((dismissed) => {
-      console.log(dismissed);
+      if (dismissed.role == 'add')
+      {
+        this.products.push(dismissed.data);
+      }
     });
     return await modal.present();
   }
-
-
 
 }
