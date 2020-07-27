@@ -42,7 +42,7 @@
 }
 
 .skip-button{
-    margin: 0 24px 0 24px;
+    margin:0 24px 0 24px !important;
     height: 56px;
     font-size: 14px;
     line-height: 20px;
@@ -50,4 +50,9 @@
     --border-radius: 60px;
     --border-color: #E0E0E0;
     --border-width: 2px;
+}
+
+.button-container {
+    position: fixed;
+    bottom: 80px;    
 }
