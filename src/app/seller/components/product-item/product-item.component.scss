@@ -1,5 +1,4 @@
 ion-col{
-
     div {
         .horizontal {
             display: flex;
@@ -9,4 +8,62 @@ ion-col{
         }
     }
     
+}
+
+.image-desing{
+    width:54px;
+    height:52px;
+    margin-left:36px;
+    margin-top: 15px;
+
+}
+
+.price-label{
+    margin-top: 15px;
+    margin-left: 17px;
+    font-family: Roboto;
+    font-style: normal;
+    font-size: 13px;
+    line-height: 15px;
+    color: #838383;
+}
+
+.type-label{
+    margin-top: 1px;
+    margin-left: 17px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 13px;
+    color: #7B7B7B;
+}
+
+.location-label{
+    margin-top: 1px;
+    margin-left: 17px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 13px;
+    color: #7B7B7B;
+}
+
+.quantity-label{
+    margin-top: 1px;
+    margin-left: 17px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+    color: #7B7B7B;
+}
+
+.button-desing{
+    color:#949090;
+    --background: white;
+    text-size-adjust: 18px;
+
 }

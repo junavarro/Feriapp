@@ -1,21 +1,21 @@
 <ion-grid>
   <ion-row>
-    <ion-col size="4">
-      <img src="https://www.shareicon.net/data/256x256/2016/06/17/595719_fish_512x512.png"/>
+    <ion-col size="3">
+      <img src="https://www.shareicon.net/data/256x256/2016/06/17/595719_fish_512x512.png" class="image-desing"/>
     </ion-col>
     <ion-col size="5">
-      <ion-row><b>₡ {{productPrice}}</b></ion-row>
-      <ion-row>{{productType}}</ion-row>
-      <ion-row>{{currentLocation}}</ion-row>
-      <ion-row>{{productQuantity}} kg</ion-row>
+      <ion-row class="price-label"><b> ₡ {{productPrice}}</b></ion-row>
+      <ion-row class="type-label">{{productType}}</ion-row>
+      <ion-row class="location-label">{{currentLocation}}</ion-row>
+      <ion-row class="quantity-label">{{productQuantity}} kg</ion-row>
     </ion-col>
     <ion-col size="3">
       <div class="horizontal">
-        <ion-button size="small">
-          <ion-icon size="small" name="create-outline"></ion-icon>
+        <ion-button  class="button-desing">
+          <ion-icon  name="create-outline"></ion-icon>
         </ion-button>
-        <ion-button size="small" color="danger">
-          <ion-icon size="small" name="trash-outline"></ion-icon>
+        <ion-button class="button-desing">
+          <ion-icon name="trash-outline"></ion-icon>
         </ion-button>
       </div>
     </ion-col>
