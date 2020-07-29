@@ -12,15 +12,44 @@
         margin: 0 0 0 21px;
         font-size: 40px;
         color: #BDBDBD;
+
+        &-stock {
+            font-size: 30px;
+            margin-left: 25px;
+            color: #838383;
+        }
     }
 
     &__title {
         font-size: 22px;
         line-height: 30px;
+        width: fit-content;
+        margin: auto;
+
+        &-stock {
+            line-height: 21px;
+            font-size: 18px;
+            color: #949090;
+        }
+    }
+
+    &__toolbar {
+        height: 100%;
+        margin-top: 44px;
+    }
+
+    &__close-button {
+        font-size: 22px;
+        color:  #9A999E;
+        margin: 0 29px 0 0;
     }
 }
 
-.add-product{
+.header-stock {
+    height: 9%;
+}
+
+.add-product {
     margin: 50% 0 50% 0;
     text-align: center;
 
@@ -57,4 +86,28 @@
     --border-radius: 60px;
     --border-color: #E0E0E0;
     --border-width: 2px;
+}
+
+.stock-content {
+    position: fixed;
+    max-height: 70%;
+    top: 17%;
+}
+
+.page-footer {
+    position: fixed;
+    bottom: 0;
+    height: 13%;
+    border: 0;
+
+    &__segment {
+        height: 100%;
+    }
+}
+
+.new-product-button {
+    width: 51px;
+    height: 51px;
+    --background:#C4C4C4;
+    margin: 0 20px 15px 0;
 }

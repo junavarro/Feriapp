@@ -1,14 +1,4 @@
-<ion-content>
-
-  <app-product-item *ngFor="let product of products" [productType]=product.productType [productQuantity]=product.productQuantity
-  [productPrice]=product.productPrice [extractionDate]=product.productExtractionDate [fishingZone]=product.productFishingZone
-  [currentLocation]=product.currentLocation>
-  </app-product-item>
-  
-  <!-- fab placed to the (vertical) center and end -->
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
-</ion-content>
+<app-product-item *ngFor="let product of products" [productType]=product.productType [productQuantity]=product.productQuantity
+    [productPrice]=product.productPrice [extractionDate]=product.productExtractionDate [fishingZone]=product.productFishingZone
+    [currentLocation]=product.currentLocation>
+</app-product-item>
