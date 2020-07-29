@@ -16,6 +16,12 @@
     &__title {
         font-size: 22px;
         line-height: 30px;
+        width: fit-content;
+        margin:auto;
+    }
+
+    div {
+        margin-left: -85px;
     }
 }
 
@@ -32,7 +38,7 @@
 
         &-label {
             margin-left: 33px;
-            width: 125px;
+            width: fit-content;
         }
 
         &-last {
@@ -42,29 +48,24 @@
         }
 
         &-icon {
-            font-size: 20px;
+            font-size: 16px;
             color:#9A999E;
-            margin-right: 25px;
-            background-color: #F6F6F6;
-            padding: 2px 3px 2px 0;
-            border-top-right-radius: 3px;
-            border-bottom-right-radius: 3px;
+            padding-bottom: 2px;
+            position: absolute;
+            right: 7px;
         }
 
         &-location-input {
-            margin-left: 33px;
-            background-color: #F6F6F6;
-            border-top-left-radius: 3px;
-            border-bottom-left-radius: 3px;
+            width: 100%;
             --padding-start: 5px !important;
-            --padding-top: 2px !important;
+            --padding-top: 4px !important;
             --padding-bottom: 2px !important;
         }
 
         &-dropdown {
             padding-right: 10px;
             padding-left: 10px;
-            margin-right: 25px;
+            margin-right: 10px;
             background-color: #F6F6F6;
             border-radius: 3px;
             width: 115px;
@@ -72,11 +73,24 @@
         }
 
         &-input {
+            position: fixed;
+            right: 25px;
             text-align: center;
-            margin: 0 8px 0 60px;
-            max-width: 115px;
             border-radius: 3px;
             background-color: #F6F6F6;
+
+            &_quantity {
+                right: 48px;
+                width: 50px;
+            }
+
+            &_price {
+                width: 72px;
+            }
+
+            &_date {
+                width: 115px;
+            }
         }
         
     }
@@ -89,4 +103,18 @@
         --color: #474141;
         --background: #EEEDED;
     }
+}
+
+.unit-label {
+    position: fixed;
+    right: 25px;
+}
+
+.location-icon-input {
+    background-color: #F6F6F6;
+    border-radius: 3px;
+    position: fixed;
+    left: 33px;
+    right: 25px;
+    height: 25px;
 }
