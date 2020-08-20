@@ -1,22 +1,18 @@
-<ion-grid>
-  <ion-row>
-    <ion-col size="3">
-      <ion-input value="Robalo"></ion-input>
+<ion-grid class="ion-no-padding">
+  <ion-row class="product-container ion-no-padding">
+    <ion-col class="ion-no-padding" size="3">
+      <img class="product-image" src="https://www.shareicon.net/data/256x256/2016/06/17/595719_fish_512x512.png"/>
     </ion-col>
-    <ion-col size="2">
-      <ion-input value="5000"></ion-input>
+    <ion-col class="ion-no-padding" size="6">
+      <ion-row class="label label-price"><b> ₡ {{productPrice}}</b></ion-row>
+      <ion-row class="label label-type">{{productType}}</ion-row>
+      <ion-row class="label label-location">{{currentLocation}}</ion-row>
+      <ion-row class="label label-quantity">{{productQuantity}} kg</ion-row>
     </ion-col>
-    <ion-col size="2">
-      <ion-input value="kg"></ion-input>
-    </ion-col>
-    <ion-col size="5">
+    <ion-col class="ion-no-padding" size="3">
       <div class="horizontal">
-        <ion-button size="small">
-          <ion-icon size="small" name="create-outline"></ion-icon>
-        </ion-button>
-        <ion-button size="small" color="danger">
-          <ion-icon size="small" name="trash-outline"></ion-icon>
-        </ion-button>
+        <ion-icon class="edit-product-icon" name="create-outline"></ion-icon>
+        <ion-icon class="delete-product-icon" name="trash-outline"></ion-icon>
       </div>
     </ion-col>
   </ion-row>

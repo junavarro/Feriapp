@@ -1,10 +1,113 @@
-div{
-    &.noProducts{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        div{
-            align-self: center;
+.main-container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.header-container {
+    margin-top: 44px;
+
+    &__go-back-button {
+        margin: 0 0 0 21px;
+        font-size: 40px;
+        color: #BDBDBD;
+
+        &-stock {
+            font-size: 30px;
+            margin-left: 25px;
+            color: #838383;
         }
     }
+
+    &__title {
+        font-size: 22px;
+        line-height: 30px;
+        width: fit-content;
+        margin: auto;
+
+        &-stock {
+            line-height: 21px;
+            font-size: 18px;
+            color: #949090;
+        }
+    }
+
+    &__toolbar {
+        height: 100%;
+        margin-top: 44px;
+    }
+
+    &__close-button {
+        font-size: 22px;
+        color:  #9A999E;
+        margin: 0 29px 0 0;
+    }
+}
+
+.header-stock {
+    height: 9%;
+}
+
+.add-product {
+    margin: 50% 0 50% 0;
+    text-align: center;
+
+    &__button{
+        width: 68px;
+        height: 68px;
+        left: 50%;
+        transform: translateX(-50%);
+        align-self: center;
+        position: absolute;
+        --background:rgba(196, 196, 196, 0.7);;
+        --border-radius: 68px;
+        vertical-align: middle;
+    }
+
+    &__label{
+        font-size: 13px;
+        line-height: 15px;
+        letter-spacing: 1px;
+        color:#9A999E;
+        display: flex;
+        justify-content: center;
+        margin-top: 12px;
+        padding-top: 80px;
+    }
+}
+
+.skip-button{
+    margin:0 24px 0 24px !important;
+    height: 56px;
+    font-size: 14px;
+    line-height: 20px;
+    --color: black;
+    --border-radius: 60px;
+    --border-color: #E0E0E0;
+    --border-width: 2px;
+}
+
+.stock-content {
+    position: fixed;
+    max-height: 70%;
+    top: 17%;
+}
+
+.page-footer {
+    position: fixed;
+    bottom: 0;
+    height: 13%;
+    border: 0;
+
+    &__segment {
+        height: 100%;
+    }
+}
+
+.new-product-button {
+    width: 51px;
+    height: 51px;
+    --background:#C4C4C4;
+    margin: 0 20px 15px 0;
 }

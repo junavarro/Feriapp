@@ -1,19 +1,120 @@
-ion-item{
+.header-container {
+    margin-top: 44px;
 
-    margin-top: 20px;
-    margin-bottom: 15px;
+    &__toolbar {
+        height: 60px;
+        --border-color: #F6F6F6;
+        --border-width: 0 0 4px !important;
+    }
+
+    &__go-back-button {
+        margin: 0 0 0 21px;
+        font-size: 40px;
+        color: #BDBDBD;
+    }
+
+    &__title {
+        font-size: 22px;
+        line-height: 30px;
+        width: fit-content;
+        margin:auto;
+    }
+
+    div {
+        margin-left: -85px;
+    }
 }
 
-form{
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    div{
-        align-self: center;
-        width: 80%;
-        ion-button{
-            margin-top: 45%;
+.add-product-form {
+    margin-top: 30px;
+
+    &__item {
+        --padding-start: 0;
+        --border-width: 0 0 2px 0;
+        --border-color: rgba(143,146,161,.2);
+        --color: #9A999E;
+        --font-size: 12px;
+        --line-height: 14px;
+
+        &-label {
+            margin-left: 33px;
+            width: fit-content;
         }
+
+        &-last {
+            --padding-bottom: 40px; 
+            --border-width: 0 0 4px 0;
+            --border-color: #F6F6F6;
+        }
+
+        &-icon {
+            font-size: 16px;
+            color:#9A999E;
+            padding-bottom: 2px;
+            position: absolute;
+            right: 7px;
+        }
+
+        &-location-input {
+            width: 100%;
+            --padding-start: 5px !important;
+            --padding-top: 4px !important;
+            --padding-bottom: 2px !important;
+        }
+
+        &-dropdown {
+            padding-right: 10px;
+            padding-left: 10px;
+            margin-right: 10px;
+            background-color: #F6F6F6;
+            border-radius: 3px;
+            width: 115px;
+            text-align: center;
+        }
+
+        &-input {
+            position: fixed;
+            right: 25px;
+            text-align: center;
+            border-radius: 3px;
+            background-color: #F6F6F6;
+
+            &_quantity {
+                right: 48px;
+                width: 50px;
+            }
+
+            &_price {
+                width: 72px;
+            }
+
+            &_date {
+                width: 115px;
+            }
+        }
+        
     }
+
+    &__submit-button {
+        margin: 29px 22px 0 22px;
+        height: 48px;
+        font-size: 14px;
+        line-height: 20px;
+        --color: #474141;
+        --background: #EEEDED;
+    }
+}
+
+.unit-label {
+    position: fixed;
+    right: 25px;
+}
+
+.location-icon-input {
+    background-color: #F6F6F6;
+    border-radius: 3px;
+    position: fixed;
+    left: 33px;
+    right: 25px;
+    height: 25px;
 }
