@@ -1,34 +1,30 @@
 .modal-container{
-    margin-top: 44px;
-
-    &__go-back-button{
-        font-size: 40px;
-        color: #BDBDBD;
-        margin-left: 21px;
-    }
+    margin-top: 80px;
+    background: #B4B4B4;
 
     &__title{
-        //font-family: SF UI Text;
-        font-size: 22px;
+        font-family: "TT Norms";
+        font-style: normal;
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 35px;
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
         align-self: center;
-        width: 222px;
-        font-style: normal;
         color: #2E3034;
         text-align: center;
+        width: 100%;
     }
 }
 
 .choose-user{
-    margin-top: 90px;
 
     &__label{
-        //font-family: SF UI Text;
+        font-family: "TT Norms";
         font-style: normal;
-        font-size: 12px;
-        line-height: 20px;
+        font-size: 18px;
+        line-height: 21px;
         color: #1E1F20;
         letter-spacing: 1px;
         text-transform: uppercase;
@@ -36,41 +32,50 @@
         justify-content: center;
         margin: auto;
         width: 303px;
-        height: 20px;
-        
+        height: 20px;  
     }
 
     &__button-unselected{
-        width: 102px;
-        height: 102px;
+        width: 140px;
+        height: 140px;
         margin-left: auto;
         margin-right: auto;
         margin-top: 24px;
-        --background: #DCDCDC;
-        --border-radius: 50px;
+        --background: #ffffff;
     }
 
-    &__button-selected{
-        width: 102px;
-        height: 102px;
+    &__button-selected-buyer{
+        width: 140px;
+        height: 140px;
         margin-left: auto;
         margin-right: auto;
         margin-top: 24px;
-        --background: #4e4949;
-        --border-radius: 50px;
+        --background: #EE7333;
+    }
+
+    &__button-selected-seller{
+        width: 140px;
+        height: 140px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 24px;
+        --background: #00A3FF;
     }
 
 }
 
 .next-button {
-    margin-top: 89px;
+    margin-top: 86px;
+    margin-bottom: 80px;
+    margin-left: 25px;
+    margin-right: 25px;
     height: 48px;
-    font-size: 14px;
+    font-size: 18px;
     font-style: normal;
-    //font-family: SF UI Text;
+    font-family: "TT Norms";
     font-weight: bold;
-    line-height: 20px;
-    color: #474141;
+    line-height: 21px;
+    color: #ffffff;
     --border-radius: 60px;
-    --background: #EEEDED;
+    --background: #838383;
 }
