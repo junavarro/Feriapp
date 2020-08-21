@@ -1,6 +1,5 @@
 .modal-container{
     margin-top: 80px;
-    background: #B4B4B4;
 
     &__title{
         font-family: "TT Norms";
@@ -16,6 +15,10 @@
         text-align: center;
         width: 100%;
     }
+}
+
+.choose-user-container{
+    margin-top: 5px;
 }
 
 .choose-user{
