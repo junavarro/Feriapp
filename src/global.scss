@@ -24,3 +24,10 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+/*Fonts*/
+@font-face {
+    font-family: TT Norms-Bold;
+    font-style: bold;
+    src: url("./assets/font/TTNorms-Bold.otf");
+}
