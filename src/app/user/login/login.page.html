@@ -5,9 +5,12 @@
 <ion-content>
   <ion-grid class="login-page-grid ion-no-padding">
     <ion-row>
+      <img class="logo" src="../assets/icon/logo.svg">
+    </ion-row>
+    <ion-row>
       <ion-col class="login-container ion-no-padding">
-        <b><ion-label class="login-container__welcome-title">¡Bienvenido!</ion-label></b>
-        <ion-label class="login-container__request-phone-label">Ingresa tu número de teléfono</ion-label>
+        <ion-label class="login-container__welcome-title">¡Bienvenido!</ion-label>
+        <ion-label class="login-container__request-phone-label">Pesca Artesanal Costa Rica</ion-label>
         <form class="login-form" [formGroup]="loginForm" (ngSubmit)="logUser()">
           <b><ion-label class="login-form__phone-label" for="phone">NÚMERO DE TELÉFONO</ion-label></b>
           <ion-item class="login-form__phone-item" lines="none">
