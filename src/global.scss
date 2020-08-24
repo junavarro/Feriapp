@@ -26,8 +26,16 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 /*Fonts*/
+
 @font-face {
     font-family: TT Norms-Bold;
-    font-style: bold;
+    font-style: normal;
     src: url("./assets/font/TTNorms-Bold.otf");
+}
+
+
+@font-face {
+    font-family: SF UI Text;
+    font-style: normal;
+    src: url("./assets/font/SF-UI-Text-Regular.ttf");
 }
