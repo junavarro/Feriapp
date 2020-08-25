@@ -35,6 +35,7 @@ export class ModalComponent {
           this.isBuyerSelected=true;
     }
  }
+ 
  dismiss() {
   this.modalCtrl.dismiss({
     'dismissed': true
