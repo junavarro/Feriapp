@@ -36,7 +36,7 @@
 .login-form {
     margin-top: 5.3vh;
 
-    &__phone-label {
+    &__label {
         font-family: TT Norms-Bold;
         font-size: 2.3vh;
         color: black;
@@ -44,28 +44,29 @@
         width: fit-content;
     }
 
-    &__phone-item {
+    &__item {
         --padding-start: 0;
         --border-width: 0 0 2px 0;
         --border-color: rgba(143,146,161,.2);
         height: fit-content;
 
-        &_input {
+        &-input {
             margin-top: 1vh;
             font-family: SF UI Text;
             font-size: 1.9vh;
             color:#838383;
             font-weight: 500;
+
+            &_invalid-icon {
+                font-size: 2.8vh;
+                color: #838383;
+            }
+    
+            &_valid-icon {
+                color: #53D769;
+            }
         }
     
-        &_invalid-icon {
-            font-size: 2.8vh;
-            color: #838383;
-        }
-
-        &_valid-icon {
-            color: #53D769;
-        }
     }
 
     &__submit-button {
@@ -100,11 +101,14 @@
 }
 
 .terms-services {
-    margin-top: 8.1vh !important;
+    position: fixed;
+    bottom: 5.8vh;
     font-size: 1.5vh;
     font-family: SF UI Text;
     font-weight: 500;
-    margin: auto;
+    margin: auto !important;
+    left: 0;
+    right: 0;
     width: fit-content;
     text-align: center;
 

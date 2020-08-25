@@ -11,15 +11,22 @@
       <ion-col class="login-container ion-no-padding">
         <ion-label class="login-container__welcome-title">Bienvenido!</ion-label>
         <ion-label class="login-container__fishing-subtitle">Pesca Artesanal Costa Rica</ion-label>
-        <form class="login-form" [formGroup]="loginForm" (ngSubmit)="logUser()">
-          <ion-label class="login-form__phone-label" for="phone">Número de teléfono</ion-label>
-          <ion-item class="login-form__phone-item ion-no-padding" lines="none">
-            <ion-input class="login-form__phone-item_input ion-no-padding" id="phone" type="phone" formControlName="phone" placeholder="0000-0000"></ion-input> 
-            <ion-icon class="login-form__phone-item_invalid-icon" [class.login-form__phone-item_valid-icon]="loginForm.valid" name="checkmark-circle-outline"></ion-icon>
+        <form class="login-form" [formGroup]="loginForm" (ngSubmit)="checkPhoneNumber()" *ngIf="!requestPassword">
+          <ion-label class="login-form__label" for="phone">Número de teléfono</ion-label>
+          <ion-item class="login-form__item ion-no-padding" lines="none">
+            <ion-input class="login-form__item-input ion-no-padding" id="phone" type="phone" formControlName="phone" placeholder="0000-0000"></ion-input> 
+            <ion-icon class="login-form__item-input_invalid-icon" [class.login-form__item-input_valid-icon]="loginForm.valid" name="checkmark-circle-outline"></ion-icon>
           </ion-item>
           <ion-button class="login-form__submit-button" type="submit" [disabled]="!loginForm.valid" strong="true" expand="block">Siguiente</ion-button>
+          <ion-button class="create-account-button" type="submit" strong="true" fill="outline" expand="block" (click) = "presentModal()">Crear Cuenta</ion-button>
         </form>
-        <ion-button class="create-account-button" type="submit" strong="true" fill="outline" expand="block" (click) = "presentModal()">Crear Cuenta</ion-button>
+        <form class="login-form" [formGroup]="passwordForm" (ngSubmit)="logUser()" *ngIf="requestPassword">
+          <ion-label class="login-form__label" for="password">Contraseña</ion-label>
+          <ion-item class="login-form__item ion-no-padding" lines="none">
+            <ion-input class="login-form__item-input ion-no-padding" id="password" type="password" formControlName="password"></ion-input> 
+          </ion-item>
+          <ion-button class="login-form__submit-button" type="submit" [disabled]="!passwordForm.valid" strong="true" expand="block">Siguiente</ion-button>
+        </form>
         <div class="terms-services">
           <ion-label class="terms-services-label">Al iniciar sesión aceptas nuestros </ion-label>
           <ion-label class="terms-services-link">Términos de servicio</ion-label>

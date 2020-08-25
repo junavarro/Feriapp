@@ -15,21 +15,37 @@ import { ModalController } from '@ionic/angular';
 
 export class LoginPage implements OnInit {
   private loginForm : FormGroup;
+  private passwordForm : FormGroup;
+  private requestPassword : Boolean;
 
-  constructor( private formBuilder: FormBuilder, private modalController: ModalController) { }
+  constructor(private loginFormBuilder: FormBuilder,private passwordFormBuilder: FormBuilder, private modalController: ModalController) {
+    this.requestPassword = false;
+  }
 
   ngOnInit() {
-    this.loginForm = this.formBuilder.group({
+    this.loginForm = this.loginFormBuilder.group({
       phone:  new FormControl('', Validators.compose([
         Validators.required,
         Validators.minLength(8),
         Validators.maxLength(8),
         Validators.pattern(/^-?(0|[1-9]\d*)?$/)])),
     });
+
+    this.passwordForm = this.passwordFormBuilder.group({
+      password: new FormControl('',Validators.compose([
+        Validators.required,
+        Validators.minLength(6),
+      ]))
+    });
+  }
+
+  checkPhoneNumber() {
+    console.log(this.loginForm.value);
+    this.requestPassword = true;
   }
 
   logUser() {
-    console.log(this.loginForm.value);
+    console.log(this.passwordForm.value);
   }
 
   async presentModal() {
