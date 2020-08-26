@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormControl, Validators, FormGroup } from '@angular/forms';
+import { User } from '../user';
 
 @Component({
   selector: 'app-register',
@@ -73,7 +74,10 @@ export class RegisterPage implements OnInit {
   }
 
   registerUser() {
-    console.log(this.registrationForm.value)
+    let userInfo = this.registrationForm.value;
+    let newUser = new User (userInfo.name,userInfo.cedula,userInfo.phone,userInfo.ubicacion,userInfo.correo,userInfo.contraseña,userInfo.whatsapp,userInfo.telegram,userInfo.sinpe);
+    //use service to store user data
+    console.log(newUser);
   }
 
   togglePassword() {
