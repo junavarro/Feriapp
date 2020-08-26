@@ -18,7 +18,7 @@
             <ion-icon class="login-form__item-input_invalid-icon" [class.login-form__item-input_valid-icon]="loginForm.valid" name="checkmark-circle-outline"></ion-icon>
           </ion-item>
           <ion-button class="login-form__submit-button" type="submit" [disabled]="!loginForm.valid" strong="true" expand="block">Siguiente</ion-button>
-          <ion-button class="create-account-button" type="submit" strong="true" fill="outline" expand="block" (click) = "presentModal()">Crear Cuenta</ion-button>
+          <ion-button class="create-account-button" strong="true" fill="outline" expand="block" (click) = "presentModal()">Crear Cuenta</ion-button>
         </form>
         <form class="login-form" [formGroup]="passwordForm" (ngSubmit)="logUser()" *ngIf="requestPassword">
           <ion-label class="login-form__label" for="password">Contraseña</ion-label>
