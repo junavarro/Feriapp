@@ -1,68 +1,82 @@
-.header-container {
-    margin: 44px 0 14px 0;
-    display: flex;
+.register-header {
 
-    &__go-back-button {
-        margin: 0 0 0 21px;
-        font-size: 40px;
-        color: #BDBDBD;
+    &__toolbar {
+        padding-top: 6vh;
+        --border-width: 0 !important;
+    }
+    
+    &__title {
+        font-family: SF UI Text Bold;
+        font-weight: bolder;
+        font-size: 5.8vw;
+        line-height: 3.7vh;
     }
 
-    &__title {
-        width: 170px;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        align-self: center;
-        font-size: 22px;
+    &__back-btn {
+        color: black;
+        margin-left: 6.5vw;
+        width: 5.6vw;
     }
 }
 
 .registration-form {
-    margin: 39px 24px 0 24px;
+    margin: 3.2vh 6.5vw;
 
     &__item {
         --padding-start: 0;
-        --border-width: 0 0 2px 0;
-        --border-color: rgba(143,146,161,.2);
-        margin-bottom: 10px;
+        --border-width: 0 0 1.5px 0;
+        --border-color: #838383;
+        margin-bottom: 2.5vh;
+        height: fit-content;
 
         &-label {
-            font-size: 12px;
-            line-height: 20px;
-            letter-spacing: 1px;
-            color: #1E1F20;
+            font-family: TT Norms Bold;
+            font-size: 3.74vw;
+            color: #0C1722;
         }
     
         &-input {
-            font-size: 14px;
-            line-height: 20px;
-            color: #8F92A1;
+            font-family: TT Norms Regular;
+            font-size: 3.2vw;
+            font-weight: 500;
+            color: #838383;
         }
-
-        &-valid-icon {
-            font-size: 18px;
+        
+        &-invalid-icon {
+            font-size: 2vh;
             color: #C4C4C4;
         }
 
-        &-invalid-icon {
-            color: #53D769;
+        &-valid-icon {
+            color: #53D769 !important;
         }
 
         &-reveal\&hide-password-icon {
-            font-size: 18px;
+            font-size: 2.37vh;
             color: #8F92A1;
         }
 
     }
 
-    &__submit-button {
-        margin: 64px 0 23px 0;
-        height: 48px;
-        font-size: 14px;
-        line-height: 20px;
-        --border-radius: 60px;
-        --color: #474141;
-        --background: #EEEDED;
+    &__subsection-title {
+        font-family: TT Norms Bold;
+        display: block;
+        font-size: 5.4vw;
+        margin: 7vh 0 0.9vh 0;
     }
+
+    &__submit-button {
+        margin: 5.8vh 0 0 0;
+        height: 6.1vh;
+        font-family: TT Norms Bold;
+        font-size: 2.2vh;
+        --border-radius: 60px;
+        --color: white;
+        --background: #838383;
+    }
+}
+
+ion-item {
+    --inner-padding-end: 0px;
+    --min-height: 3vh;
 }

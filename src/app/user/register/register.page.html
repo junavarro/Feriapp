@@ -1,59 +1,63 @@
-<ion-header>
+<ion-header class="register-header">
+  <ion-toolbar class="ion-no-padding register-header__toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button class="register-header__back-btn" text="" icon="chevron-back-outline"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="register-header__title ion-no-padding">Creando Cuenta</ion-title>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="header-container">
-    <ion-icon class="header-container__go-back-button" name="chevron-back-circle"></ion-icon>
-    <b class="header-container__title"><ion-label>Creando Cuenta</ion-label></b>
-  </div>
-  <div class="registration-form" *ngIf="userType=='seller'">
-    <form [formGroup]="sellerRegistrationForm" (ngSubmit)="registerSeller()">
-      <b class="registration-form__item-label"><ion-label for="name">NOMBRE COMPLETO</ion-label></b>
+  <div class="registration-form">
+    <form [formGroup]="registrationForm" (ngSubmit)="registerUser()">
+      <ion-label class="registration-form__item-label" for="name">Nombre completo</ion-label>
       <ion-item class="registration-form__item ion-no-padding" lines="none">
         <ion-input class="registration-form__item-input ion-no-padding" id="name" type="text" formControlName="name" placeholder="Nombre y Apellidos"></ion-input> 
       </ion-item>
-      <b class="registration-form__item-label"><ion-label for="cedula">CÉDULA</ion-label></b>
+      <ion-label class="registration-form__item-label" for="cedula">Cédula</ion-label>
       <ion-item class="registration-form__item ion-no-padding" lines="none">
         <ion-input class="registration-form__item-input ion-no-padding" id="cedula" type="number" formControlName="cedula" placeholder="Número de cédula"></ion-input> 
       </ion-item>
-      <b class="registration-form__item-label"><ion-label for="phone">NÚMERO DE TELÉFONO</ion-label></b>
+      <ion-label class="registration-form__item-label" for="phone">Número de teléfono</ion-label>
       <ion-item class="registration-form__item ion-no-padding" lines="none">
         <ion-input class="registration-form__item-input ion-no-padding" id="phone" type="number" formControlName="phone" placeholder="Número telefónico"></ion-input>
-        <ion-icon class="registration-form__item-valid-icon" [class.registration-form__item-invalid-icon]="sellerRegistrationForm.valid" name="checkmark-circle-outline"></ion-icon>
+        <ion-icon class="registration-form__item-invalid-icon" [class.registration-form__item-valid-icon]="registrationForm.valid" name="checkmark-circle-outline"></ion-icon>
       </ion-item>
-      <b class="registration-form__item-label"><ion-label for="ubicacion">UBICACIÓN HABITACIONAL</ion-label></b>
+      <ion-label class="registration-form__item-label" for="ubicacion">Ubicación Habitacional</ion-label>
       <ion-item class="registration-form__item ion-no-padding" lines="none">
         <ion-input class="registration-form__item-input ion-no-padding" id="ubicacion" type="text" formControlName="ubicacion" placeholder="Ubicación"></ion-input> 
       </ion-item>
-      <b class="registration-form__item-label"><ion-label for="contraseña">CONTRASEÑA</ion-label></b>
+      <ion-label class="registration-form__item-label" for="correo">Correo ** (opcional)</ion-label>
+      <ion-item class="registration-form__item ion-no-padding" style="margin-bottom: 5vh;" lines="none">
+        <ion-input class="registration-form__item-input ion-no-padding" id="correo" type="text" formControlName="correo" placeholder="Correo electrónico"></ion-input> 
+        <ion-icon class="registration-form__item-invalid-icon" [class.registration-form__item-valid-icon]="registrationForm.valid" name="checkmark-circle-outline"></ion-icon>
+      </ion-item>
+      <ion-label class="registration-form__item-label" for="contraseña">Contraseña</ion-label>
       <ion-item class="registration-form__item ion-no-padding" lines="none">
         <ion-input class="registration-form__item-input ion-no-padding" id="contraseña" type="password" formControlName="contraseña" placeholder="Escriba su contraseña"></ion-input> 
         <ion-icon class="registration-form__item-reveal&hide-password-icon" name="eye"></ion-icon>
       </ion-item>
-      <b class="registration-form__item-label"><ion-label for="repetirContraseña">CONTRASEÑA</ion-label></b>
+      <ion-label class="registration-form__item-label" for="repetirContraseña">Verificación de contraseña</ion-label>
       <ion-item class="registration-form__item ion-no-padding" lines="none">
-        <ion-input class="registration-form__item-input ion-no-padding" id="repetirContraseña" type="password" formControlName="repetirContraseña" placeholder="Vueva a escribir su contraseña"></ion-input> 
+        <ion-input class="registration-form__item-input ion-no-padding" id="repetirContraseña" type="password" formControlName="repetirContraseña" placeholder="Vuelva a escribir su contraseña"></ion-input> 
         <ion-icon class="registration-form__item-reveal&hide-password-icon" name="eye"></ion-icon>
       </ion-item>
-      <b class="registration-form__item-label"><ion-label for="correo">CORREO ** (opcional)</ion-label></b>
-      <ion-item class="registration-form__item ion-no-padding" lines="none">
-        <ion-input class="registration-form__item-input ion-no-padding" id="correo" type="text" formControlName="correo" placeholder="Escriba su correo (opcional)"></ion-input> 
-        <ion-icon class="registration-form__item-valid-icon" [class.registration-form__item-invalid-icon]="sellerRegistrationForm.valid" name="checkmark-circle-outline"></ion-icon>
-      </ion-item>
-      <b class="registration-form__item-label"><ion-label for="whatsapp">WHATSAPP</ion-label></b>
-      <ion-item class="registration-form__item ion-no-padding" lines="none">
-        <ion-input class="registration-form__item-input ion-no-padding" id="whatsapp" type="number" formControlName="whatsapp" placeholder="8888-8888"></ion-input> 
-      </ion-item>
-      <b class="registration-form__item-label"><ion-label for="telegram">TELEGRAM</ion-label></b>
-      <ion-item class="registration-form__item ion-no-padding" lines="none">
-        <ion-input class="registration-form__item-input ion-no-padding" id="telegram" type="number" formControlName="telegram" placeholder="8888-8888"></ion-input> 
-      </ion-item>
-      <b class="registration-form__item-label"><ion-label for="sinpe">SINPE MÓVIL</ion-label></b>
-      <ion-item class="registration-form__item ion-no-padding" lines="none">
-        <ion-input class="registration-form__item-input ion-no-padding" id="sinpe" type="number" formControlName="sinpe" placeholder="8888-8888"></ion-input> 
-      </ion-item>
-      <ion-button (click)="registerSeller()" class="registration-form__submit-button" type="submit" [disabled]="!sellerRegistrationForm.valid" strong="true" expand="block">Siguiente</ion-button>
+      <div *ngIf="userType=='seller'">
+        <ion-label class="registration-form__subsection-title">Método de contacto</ion-label>
+        <ion-label class="registration-form__item-label" for="whatsapp">Whatsapp</ion-label>
+        <ion-item class="registration-form__item ion-no-padding" lines="none">
+          <ion-input class="registration-form__item-input ion-no-padding" id="whatsapp" type="number" formControlName="whatsapp" placeholder="8888-8888"></ion-input> 
+        </ion-item>
+        <ion-label class="registration-form__item-label" for="telegram">Telegram</ion-label>
+        <ion-item class="registration-form__item ion-no-padding" lines="none">
+          <ion-input class="registration-form__item-input ion-no-padding" id="telegram" type="number" formControlName="telegram" placeholder="8888-8888"></ion-input> 
+        </ion-item>
+        <ion-label class="registration-form__item-label" for="sinpe">SINPE Móvil</ion-label>
+        <ion-item class="registration-form__item ion-no-padding" lines="none">
+          <ion-input class="registration-form__item-input ion-no-padding" id="sinpe" type="number" formControlName="sinpe" placeholder="8888-8888"></ion-input> 
+        </ion-item>
+      </div>
+      <ion-button class="registration-form__submit-button" type="submit" [disabled]="!registrationForm.valid" strong="true" expand="block">Siguiente</ion-button>
     </form>
   </div>
-  <div class="registration-form" *ngIf="userType=='buyer'"></div>
 </ion-content>
