@@ -17,9 +17,13 @@ export class LoginPage implements OnInit {
   private loginForm : FormGroup;
   private passwordForm : FormGroup;
   private requestPassword : Boolean;
+  private showPassword: boolean;
+  private passwordToggleIcon: string;
 
   constructor(private loginFormBuilder: FormBuilder,private passwordFormBuilder: FormBuilder, private modalController: ModalController) {
     this.requestPassword = false;
+    this.showPassword = false;
+      this.passwordToggleIcon = "eye-sharp";
   }
 
   ngOnInit() {
@@ -53,6 +57,11 @@ export class LoginPage implements OnInit {
       component: ModalComponent
     });
     return await modal.present();
+  }
+
+  togglePassword() {
+    this.showPassword = !this.showPassword;
+    this.passwordToggleIcon = this.passwordToggleIcon=="eye-sharp" ? "eye-off-sharp" : "eye-sharp";
   }
 
 }

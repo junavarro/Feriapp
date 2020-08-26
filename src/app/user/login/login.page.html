@@ -23,7 +23,8 @@
         <form class="login-form" [formGroup]="passwordForm" (ngSubmit)="logUser()" *ngIf="requestPassword">
           <ion-label class="login-form__label" for="password">Contraseña</ion-label>
           <ion-item class="login-form__item ion-no-padding" lines="none">
-            <ion-input class="login-form__item-input ion-no-padding" id="password" type="password" formControlName="password"></ion-input> 
+            <ion-input class="login-form__item-input ion-no-padding" id="password" placeholder="Escriba su contraseña" type="{{showPassword ? 'text' : 'password'}}" formControlName="password"></ion-input>
+            <ion-icon class="login-form__item-password-toggle-icon" name="{{passwordToggleIcon}}" (click)="togglePassword()"></ion-icon>
           </ion-item>
           <ion-button class="login-form__submit-button" type="submit" [disabled]="!passwordForm.valid" strong="true" expand="block">Siguiente</ion-button>
         </form>

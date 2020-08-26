@@ -12,12 +12,20 @@ export class RegisterPage implements OnInit {
   
   private userType: string;
   private registrationForm : FormGroup;
+  private showPassword: boolean;
+  private showPasswordRepetition: boolean;
+  private passwordToggleIcon: string;
+  private repeatPasswordToggleIcon: string;
 
   constructor(private route: ActivatedRoute, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
       this.userType = params['user'];
+      this.showPassword = false;
+      this.showPasswordRepetition = false;
+      this.passwordToggleIcon = "eye-sharp";
+      this.repeatPasswordToggleIcon = "eye-sharp";
     });
 
     this.registrationForm = this.formBuilder.group({
@@ -66,5 +74,15 @@ export class RegisterPage implements OnInit {
 
   registerUser() {
     console.log(this.registrationForm.value)
+  }
+
+  togglePassword() {
+    this.showPassword = !this.showPassword;
+    this.passwordToggleIcon = this.passwordToggleIcon=="eye-sharp" ? "eye-off-sharp" : "eye-sharp";
+  }
+
+  toggleRepeatPassword() {
+    this.showPasswordRepetition = !this.showPasswordRepetition;
+    this.repeatPasswordToggleIcon = this.repeatPasswordToggleIcon=="eye-sharp" ? "eye-off-sharp" : "eye-sharp";
   }
 }

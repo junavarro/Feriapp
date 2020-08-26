@@ -33,13 +33,13 @@
       </ion-item>
       <ion-label class="registration-form__item-label" for="contraseña">Contraseña</ion-label>
       <ion-item class="registration-form__item ion-no-padding" lines="none">
-        <ion-input class="registration-form__item-input ion-no-padding" id="contraseña" type="password" formControlName="contraseña" placeholder="Escriba su contraseña"></ion-input> 
-        <ion-icon class="registration-form__item-reveal&hide-password-icon" name="eye"></ion-icon>
+        <ion-input class="registration-form__item-input ion-no-padding" id="contraseña" type="{{showPassword ? 'text' : 'password'}}" formControlName="contraseña" placeholder="Escriba su contraseña"></ion-input> 
+        <ion-icon class="registration-form__item-password-toggle-icon" name="{{passwordToggleIcon}}" (click)="togglePassword()"></ion-icon>
       </ion-item>
       <ion-label class="registration-form__item-label" for="repetirContraseña">Verificación de contraseña</ion-label>
       <ion-item class="registration-form__item ion-no-padding" lines="none">
-        <ion-input class="registration-form__item-input ion-no-padding" id="repetirContraseña" type="password" formControlName="repetirContraseña" placeholder="Vuelva a escribir su contraseña"></ion-input> 
-        <ion-icon class="registration-form__item-reveal&hide-password-icon" name="eye"></ion-icon>
+        <ion-input class="registration-form__item-input ion-no-padding" id="repetirContraseña" type="{{showPasswordRepetition ? 'text' : 'password'}}" formControlName="repetirContraseña" placeholder="Vuelva a escribir su contraseña"></ion-input> 
+        <ion-icon class="registration-form__item-password-toggle-icon" name="{{repeatPasswordToggleIcon}}" (click)="toggleRepeatPassword()"></ion-icon>
       </ion-item>
       <div *ngIf="userType=='seller'">
         <ion-label class="registration-form__subsection-title">Método de contacto</ion-label>
