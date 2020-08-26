@@ -4,10 +4,10 @@
 
 <ion-contend style="background-color:#FBFAF9">
   <div class="choose-user">
-    <ion-button class="choose-user__button-unselected" strong="true" expand="block" (click)="selectUserType('buyer')" [class.choose-user__button-selected-buyer]="isBuyerSelected"><img src="../assets/icon/buyer.svg"></ion-button>
-    <b><ion-label class="choose-user__label">Comprador</ion-label></b>
-    <ion-button class="choose-user__button-unselected" strong="true" expand="block" (click)="selectUserType('seller')" [class.choose-user__button-selected-seller]="isSellerSelected"><img src="../assets/icon/seller.svg"></ion-button>
-    <b><ion-label class="choose-user__label">Vendedor</ion-label></b>
+    <ion-button class="choose-user__button-unselected" expand="block" (click)="selectUserType('buyer')" [class.choose-user__button-selected-buyer]="isBuyerSelected"><img src="{{buyerImageBtn}}"></ion-button>
+    <ion-label class="choose-user__label">Comprador</ion-label>
+    <ion-button class="choose-user__button-unselected" expand="block" (click)="selectUserType('seller')" [class.choose-user__button-selected-seller]="isSellerSelected"><img src="{{sellerImageBtn}}"></ion-button>
+    <ion-label class="choose-user__label">Vendedor</ion-label>
   </div>
   <div>
     <ion-button class="next-button-unselected" type="submit" strong="true" expand="block" [disabled]="!selectedUserType" (click)="goToRegistrationPage(selectedUserType)" [class.next-button-selected-buyer]="isBuyerSelected" [class.next-button-selected-seller]="isSellerSelected">Siguiente</ion-button>
