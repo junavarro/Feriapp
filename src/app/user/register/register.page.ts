@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormControl, Validators, FormGroup } from '@angular/forms';
 import { User } from '../user';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-register',
@@ -18,7 +19,7 @@ export class RegisterPage implements OnInit {
   private passwordToggleIcon: string;
   private repeatPasswordToggleIcon: string;
 
-  constructor(private route: ActivatedRoute, private formBuilder: FormBuilder) { }
+  constructor(private route: ActivatedRoute, private formBuilder: FormBuilder, private toastController: ToastController) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
@@ -88,5 +89,15 @@ export class RegisterPage implements OnInit {
   toggleRepeatPassword() {
     this.showPasswordRepetition = !this.showPasswordRepetition;
     this.repeatPasswordToggleIcon = this.repeatPasswordToggleIcon=="eye-sharp" ? "eye-off-sharp" : "eye-sharp";
+  }
+
+  async presentToast(errorMessage: string) {
+    const toast = await this.toastController.create({
+      header: "Error en el formulario",
+      message: errorMessage,
+      position: "bottom",
+      duration: 2000
+    });
+    toast.present();
   }
 }
