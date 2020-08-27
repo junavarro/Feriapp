@@ -30,9 +30,8 @@ export class LoginPage implements OnInit {
     this.loginForm = this.loginFormBuilder.group({
       phone:  new FormControl('', Validators.compose([
         Validators.required,
-        Validators.minLength(8),
-        Validators.maxLength(8),
-        Validators.pattern(/^-?(0|[1-9]\d*)?$/)])),
+        Validators.min(10000000),
+        Validators.max(99999999)])),
     });
 
     this.passwordForm = this.passwordFormBuilder.group({

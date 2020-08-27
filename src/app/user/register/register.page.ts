@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormControl, Validators, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, Validators, FormGroup, ValidationErrors } from '@angular/forms';
 import { User } from '../user';
 import { ToastController } from '@ionic/angular';
 
@@ -37,46 +37,46 @@ export class RegisterPage implements OnInit {
       ])),
       cedula: new FormControl('', Validators.compose([
         Validators.required,
-        Validators.minLength(9),
-        Validators.maxLength(9),
+        Validators.min(100000000),
+        Validators.max(999999999)
       ])),
       phone:  new FormControl('', Validators.compose([
         Validators.required,
-        Validators.minLength(8),
-        Validators.maxLength(8),
+        Validators.min(10000000),
+        Validators.max(99999999)
       ])),
       ubicacion: new FormControl('', Validators.compose([
         Validators.required
       ])),
-      contraseña: new FormControl('', Validators.compose([
+      password: new FormControl('', Validators.compose([
         Validators.required,
         Validators.minLength(6)
       ])),
-      repetirContraseña: new FormControl('', Validators.compose([
+      confirmPassword: new FormControl('', Validators.compose([
         Validators.required,
         Validators.minLength(6)
       ])),
       correo: new FormControl('', Validators.compose([
-        Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$")
+        Validators.email
       ])),
       whatsapp: new FormControl('', Validators.compose([
-        Validators.minLength(8),
-        Validators.maxLength(8)
+        Validators.min(10000000),
+        Validators.max(99999999)
       ])),
       telegram: new FormControl('', Validators.compose([
-        Validators.minLength(8),
-        Validators.maxLength(8)
+        Validators.min(10000000),
+        Validators.max(99999999)
       ])),
       sinpe: new FormControl('', Validators.compose([
-        Validators.minLength(8),
-        Validators.maxLength(8)
+        Validators.min(10000000),
+        Validators.max(99999999)
       ])),
     });
   }
 
   registerUser() {
     let userInfo = this.registrationForm.value;
-    let newUser = new User (userInfo.name,userInfo.cedula,userInfo.phone,userInfo.ubicacion,userInfo.correo,userInfo.contraseña,userInfo.whatsapp,userInfo.telegram,userInfo.sinpe);
+    let newUser = new User (userInfo.name,userInfo.cedula,userInfo.phone,userInfo.ubicacion,userInfo.correo,userInfo.password,userInfo.whatsapp,userInfo.telegram,userInfo.sinpe);
     //use service to store user data
     console.log(newUser);
   }
@@ -96,8 +96,19 @@ export class RegisterPage implements OnInit {
       header: "Error en el formulario",
       message: errorMessage,
       position: "bottom",
-      duration: 2000
+      duration: 4000
     });
     toast.present();
+  }
+
+  checkInputValue(key: string) {
+    this.registrationForm.get(key).markAsDirty();
+    const controlErrors: ValidationErrors = this.registrationForm.get(key).errors;
+    if (controlErrors != null) {
+      Object.keys(controlErrors).forEach(keyError => {
+        this.presentToast('Key control: '+key+', keyError: '+keyError);
+        console.log('Key control: '+key+', keyError: '+keyError+', err value: ', controlErrors[keyError]);
+      })
+    } 
   }
 }

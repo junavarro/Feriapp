@@ -29,6 +29,10 @@
         margin-bottom: 2.5vh;
         height: fit-content;
 
+        &-invalid {
+            --border-color: red;
+        }
+
         &-label {
             font-family: TT Norms Bold;
             font-size: 3.74vw;
