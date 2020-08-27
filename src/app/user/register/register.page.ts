@@ -33,7 +33,7 @@ export class RegisterPage implements OnInit {
     this.registrationForm = this.formBuilder.group({
       name: new FormControl('', Validators.compose([
         Validators.required,
-        Validators.pattern("^[a-zA-Z ]*$")
+        Validators.pattern("^[a-zA-ZÀ-ÿ\u00f1\u00d1 ]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1 ]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1 ]+$")
       ])),
       cedula: new FormControl('', Validators.compose([
         Validators.required,
