@@ -96,7 +96,7 @@ export class RegisterPage implements OnInit {
       header: "Error en el formulario",
       message: errorMessage,
       position: "bottom",
-      duration: 4000
+      duration: 3000
     });
     toast.present();
   }
@@ -105,10 +105,115 @@ export class RegisterPage implements OnInit {
     this.registrationForm.get(key).markAsDirty();
     const controlErrors: ValidationErrors = this.registrationForm.get(key).errors;
     if (controlErrors != null) {
-      Object.keys(controlErrors).forEach(keyError => {
-        this.presentToast('Key control: '+key+', keyError: '+keyError);
-        console.log('Key control: '+key+', keyError: '+keyError+', err value: ', controlErrors[keyError]);
-      })
+      switch (key) {
+        case 'name':
+          this.displayNameError(controlErrors);
+          break;
+        case 'cedula':
+          this.displayIdError(controlErrors);
+          break;
+        case 'phone':
+        case 'whatsapp':
+        case 'telegram':
+        case 'sinpe':
+          this.displayPhoneError(controlErrors);
+          break;
+        case 'ubicacion':
+          this.displayLocationError(controlErrors);
+          break;
+        case 'correo':
+          this.displayEmailError(controlErrors);
+          break;
+        case 'password':
+        case 'confirmPassword':
+          this.displayPasswordError(controlErrors);
+          break;
+      }
     } 
   }
+
+  displayNameError(controlErrors: ValidationErrors) {
+    let error: string;
+    Object.keys(controlErrors).forEach(keyError => {
+      switch(keyError) {
+        case 'required':
+          error = "El nombre es un campo obligatorio.";
+          break;
+        case 'pattern':
+          error = "El nombre únicamente puede contener letras.";
+          break;
+      }
+      this.presentToast(error);
+    })
+  }
+
+  displayIdError(controlErrors: ValidationErrors) {
+    let error: string;
+    Object.keys(controlErrors).forEach(keyError => {
+      switch(keyError) {
+        case 'required':
+          error = "La cédula es un campo obligatorio.";
+          break;
+        case 'min' || 'max':
+          error = "La cédula debe estar compuesta por 9 números. Utilice ceros en lugar de guiones.";
+          break;
+      }
+    })
+    this.presentToast(error);
+  }
+
+  displayPhoneError(controlErrors: ValidationErrors) {
+    let error: string;
+    Object.keys(controlErrors).forEach(keyError => {
+      switch(keyError) {
+        case 'required':
+          error = "El número telefónico es un campo obligatorio.";
+          break;
+        case 'min' || 'max':
+          error = "El número teléfono debe estar compuesto exactamente por 8 números. No utilice guiones para separarlo.";
+          break;
+      }
+    })
+    this.presentToast(error);
+  }
+
+  displayLocationError(controlErrors: ValidationErrors) {
+    let error: string;
+    Object.keys(controlErrors).forEach(keyError => {
+      switch(keyError) {
+        case 'required':
+          error = "La ubicación es un campo obligatorio.";
+          break;
+      }
+    })
+    this.presentToast(error);
+  }
+
+  displayEmailError(controlErrors: ValidationErrors) {
+    let error: string;
+    Object.keys(controlErrors).forEach(keyError => {
+      switch(keyError) {
+        case 'email':
+          error = "El formato del correo electrónico es incorrecto.";
+          break;
+      }
+    })
+    this.presentToast(error);
+  }
+
+  displayPasswordError(controlErrors: ValidationErrors) {
+    let error: string;
+    Object.keys(controlErrors).forEach(keyError => {
+      switch(keyError) {
+        case 'required':
+          error = "La contraseña y confirmación son campos obligatorios.";
+          break;
+        case 'minlength':
+          error = "La contraseña debe contener mínimo 6 caracteres.";
+          break;
+      }
+    })
+    this.presentToast(error);
+  }
+
 }
