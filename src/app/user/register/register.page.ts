@@ -96,7 +96,8 @@ export class RegisterPage implements OnInit {
       header: "Error en el formulario",
       message: errorMessage,
       position: "bottom",
-      duration: 3000
+      duration: 3000,
+      color: "danger"
     });
     toast.present();
   }
