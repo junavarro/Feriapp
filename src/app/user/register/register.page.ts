@@ -13,6 +13,10 @@ import { ToastController } from '@ionic/angular';
 export class RegisterPage implements OnInit {
   
   private userType: string;
+  private phoneNumber: number;
+  private whatsapp: number;
+  private telegram: number;
+  private sinpe: number;
   private registrationForm : FormGroup;
   private showPassword: boolean;
   private showPasswordRepetition: boolean;
@@ -24,11 +28,12 @@ export class RegisterPage implements OnInit {
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
       this.userType = params['user'];
-      this.showPassword = false;
-      this.showPasswordRepetition = false;
-      this.passwordToggleIcon = "eye-sharp";
-      this.repeatPasswordToggleIcon = "eye-sharp";
     });
+    
+    this.showPassword = false;
+    this.showPasswordRepetition = false;
+    this.passwordToggleIcon = "eye-sharp";
+    this.repeatPasswordToggleIcon = "eye-sharp";
 
     this.registrationForm = this.formBuilder.group({
       name: new FormControl('', Validators.compose([
@@ -215,6 +220,12 @@ export class RegisterPage implements OnInit {
       }
     })
     this.presentToast(error);
+  }
+
+  autocompletePhoneNumbers() {
+    this.whatsapp = this.phoneNumber;
+    this.telegram = this.phoneNumber;
+    this.sinpe = this.phoneNumber;
   }
 
 }
