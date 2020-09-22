@@ -1,20 +1,26 @@
 <div class="main-container" *ngIf="products.length == 0">
   <ion-header class="header-container">
-    <ion-icon class="header-container__go-back-button" name="chevron-back-circle"></ion-icon>
-    <ion-title class="header-container__title">Mi primer producto</ion-title>
+    <ion-toolbar class="header-container__toolbar ion-no-padding">
+      <ion-buttons slot="start">
+        <ion-back-button>
+          <ion-icon class="header-container__go-back-button" name="chevron-back-outline"></ion-icon>
+        </ion-back-button>
+      </ion-buttons>
+      <ion-title class="header-container__title">Mi producto</ion-title>
+    </ion-toolbar>
   </ion-header>
   
-  <ion-content>
+  <div>
       <div class="add-product">
-        <ion-fab-button class=" add-product__button" (click)="presentAddProductModal($event)">
-          <ion-icon name="add"></ion-icon>
+        <ion-fab-button class="add-product__button" (click)="presentAddProductModal($event)">
+          <img src="../assets/icon/add.svg">
         </ion-fab-button>
         <ion-label class="add-product__label">Agregá tu primer producto</ion-label>
       </div>
       <div>
-        <ion-button class="skip-button" type="submit" strong="true" fill="outline" expand="block">Omitir</ion-button>
+        <ion-button class="add-product__skip-button" type="submit" strong="true" fill="outline" expand="block">Omitir</ion-button>
       </div>
-  </ion-content>
+  </div>
 </div>
 
 <div class="main-container" *ngIf="products.length > 0">
@@ -22,7 +28,7 @@
     <ion-toolbar class="header-container__toolbar ion-no-padding">
       <ion-buttons slot="start">
         <ion-button>
-          <ion-icon class="header-container__go-back-button" name="chevron-back-circle"></ion-icon>
+          <ion-icon class="header-container__go-back-button" name="chevron-back-outline"></ion-icon>
         </ion-button>
       </ion-buttons>
       <ion-title class="header-container__title ion-no-padding"><b>Mis productos</b></ion-title>

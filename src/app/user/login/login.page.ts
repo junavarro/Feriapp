@@ -15,21 +15,40 @@ import { ModalController } from '@ionic/angular';
 
 export class LoginPage implements OnInit {
   private loginForm : FormGroup;
+  private passwordForm : FormGroup;
+  private requestPassword : Boolean;
+  private showPassword: boolean;
+  private passwordToggleIcon: string;
 
-  constructor( private formBuilder: FormBuilder, private modalController: ModalController) { }
+  constructor(private loginFormBuilder: FormBuilder,private passwordFormBuilder: FormBuilder, private modalController: ModalController) {
+    this.requestPassword = false;
+    this.showPassword = false;
+      this.passwordToggleIcon = "eye-sharp";
+  }
 
   ngOnInit() {
-    this.loginForm = this.formBuilder.group({
+    this.loginForm = this.loginFormBuilder.group({
       phone:  new FormControl('', Validators.compose([
         Validators.required,
-        Validators.minLength(8),
-        Validators.maxLength(8),
-        Validators.pattern(/^-?(0|[1-9]\d*)?$/)])),
+        Validators.min(10000000),
+        Validators.max(99999999)])),
+    });
+
+    this.passwordForm = this.passwordFormBuilder.group({
+      password: new FormControl('',Validators.compose([
+        Validators.required,
+        Validators.minLength(6),
+      ]))
     });
   }
 
-  logUser() {
+  checkPhoneNumber() {
     console.log(this.loginForm.value);
+    this.requestPassword = true;
+  }
+
+  logUser() {
+    console.log(this.passwordForm.value);
   }
 
   async presentModal() {
@@ -37,6 +56,11 @@ export class LoginPage implements OnInit {
       component: ModalComponent
     });
     return await modal.present();
+  }
+
+  togglePassword() {
+    this.showPassword = !this.showPassword;
+    this.passwordToggleIcon = this.passwordToggleIcon=="eye-sharp" ? "eye-off-sharp" : "eye-sharp";
   }
 
 }

@@ -12,11 +12,15 @@ export class ModalComponent {
   private selectedUserType: string;
   private isSellerSelected: boolean;
   private isBuyerSelected: boolean;
+  private buyerImageBtn: string;
+  private sellerImageBtn: string;
 
   constructor(private router: Router, private modalCtrl: ModalController) { 
-    selectedUserType: "";
-    isSellerSelected: false;
-    isBuyerSelected: false;
+    this.selectedUserType = "";
+    this.isSellerSelected = false;
+    this.isBuyerSelected = false;
+    this.buyerImageBtn = "../assets/icon/buyer.svg";
+    this.sellerImageBtn = "../assets/icon/seller.svg"
   }
 
   goToRegistrationPage(userType: string) {
@@ -27,14 +31,19 @@ export class ModalComponent {
   selectUserType(userType:string) {
     this.selectedUserType = userType;
     if (userType=="seller") {
-           this.isSellerSelected=true;
-           this.isBuyerSelected=false;
+           this.isSellerSelected = true;
+           this.isBuyerSelected = false;
+           this.buyerImageBtn = "../assets/icon/buyer.svg";
+           this.sellerImageBtn = "../assets/icon/userType.svg";
     }
     else {
-          this.isSellerSelected=false;
-          this.isBuyerSelected=true;
+          this.isSellerSelected = false;
+          this.isBuyerSelected = true;
+          this.buyerImageBtn = "../assets/icon/userType.svg";
+           this.sellerImageBtn = "../assets/icon/seller.svg";
     }
  }
+ 
  dismiss() {
   this.modalCtrl.dismiss({
     'dismissed': true
